@@ -1,17 +1,16 @@
-function decimalToBinary(num) {
+function decimalToBinary(decimal) {
   //Write you code here
 	// program to convert decimal to binary
-    let bin = 0;
-    let rem, i = 1, step = 1;
-    while (num != 0) {
-        rem = num % 2;
-        console.log(
-            `Step ${step++}: ${num}/2, Remainder = ${rem}, Quotient = ${parseInt(num/2)}`
-        );
-        num = parseInt(num / 2);
-        bin = bin + rem * i;
-        i = i * 10;
-    }
+    while (decimal > 0) {
+   // if modulo of number with 2 is ‘1’, append 1 in front of binary string. Otherwise append 0.
+   if (decimal % 2 == 1) {
+      binary = "1" + binary;
+   } else {
+      binary = "0" + binary;
+   }
+   // divide number by 2.
+   decimal = Math.floor(decimal / 2);
+}
     console.log(`Binary: ${bin}`);
 }
 
